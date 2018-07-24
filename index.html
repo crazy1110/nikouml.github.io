@@ -249,6 +249,170 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/24/js之揭开类型判断的面纱/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nikouml">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p53vmqr8d.bkt.clouddn.com/timg.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/24/js之揭开类型判断的面纱/" itemprop="url">js之揭开类型判断的面纱</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-24T18:24:46+08:00">
+                2018-07-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>参考：冴羽github中的js专题 <a href="https://github.com/mqyqingfeng/Blog" target="_blank" rel="noopener">https://github.com/mqyqingfeng/Blog</a></p>
+<p>nikouml</p>
+</blockquote>
+<h1 id="js之揭开类型判断的面纱"><a href="#js之揭开类型判断的面纱" class="headerlink" title="js之揭开类型判断的面纱"></a>js之揭开类型判断的面纱</h1><h2 id="类型判断？"><a href="#类型判断？" class="headerlink" title="类型判断？"></a>类型判断？</h2><p>在我们实际的开发中经常会遇到类型判断的问题，比如前端从后端接口中拿到一个数据，我们可能需要判断这个数据的类型，假设有一个变量a，简单点的我们判断它是数字还是字符串，或者说是对象还是数组啦，更高级别的情况下，我们可能需要判断a是日期还是错误类型等等。</p>
+<h2 id="都用typeof吗？不！"><a href="#都用typeof吗？不！" class="headerlink" title="都用typeof吗？不！"></a>都用typeof吗？不！</h2><p>我们最最常用的莫过于typeof，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof(&apos;nikouml&apos;))   //string</span><br></pre></td></tr></table></figure>
+<p>上面的例子很常见，用typeof判断’nikomul’的类型，然后将结果打印出来，很明显高结果是string类型。但是我们应当注意,下图是MDN上对typeof的解释：<br><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%886.09.28.png" alt=""><br>这很明显的告诉我们，typeof是一个运算符，就像数学中的加减乘除一样，放在单个操作数的前面，操作数可以是任意类型的。返回值是代表操作室类型的一个字符串。<br>因此，下面这种写法和上面完全等同：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof &apos;nikouml&apos;)   //string</span><br></pre></td></tr></table></figure>
+<p>我们都知道，在ES6之前，Js一共有6中数据类型，下面列出它们以及typeof对应的返回结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- Undefined     //undefined</span><br><span class="line">- Null          //object</span><br><span class="line">- Boolean		   //boolean	</span><br><span class="line">- Number        //number</span><br><span class="line">- String        //string</span><br><span class="line">- Object		  //object</span><br></pre></td></tr></table></figure>
+<p>我们可以看到，typeof返回的都是小写字符串，同时应该注意到，Null和Object类型返回结果都是object。因此，typeof返回的结果并不能与原类型一一对应。</p>
+<p>是不是object类型下的所有类型都会只返回object呢？有一个特例，typeof能够检测出object下的function类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function func()&#123;&#125;</span><br><span class="line">console.log(typeof func)   // function</span><br></pre></td></tr></table></figure>
+<p>因此，typeof实际上能够检测出6中类型的值，它们是：</p>
+<ul>
+<li>undefined</li>
+<li>object</li>
+<li>boolean</li>
+<li>number</li>
+<li>string</li>
+<li>function</li>
+</ul>
+<p>但是我们知道，object类型下还细分有其他诸多类型，例如Array，Date，Error，RegExp等，我们尝试一下用typeof去检测这些类型：</p>
+<p><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%886.38.36.png" alt=""></p>
+<p>返回的可都是object呀！难道没有办法把他们区别开了吗？</p>
+<h2 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h2><p>哈哈，怎么可能没有呢？那就是Object.prototype.toString呀~</p>
+<p>那么这个方法的原理是什么呢？在ES5里这样写道：</p>
+<blockquote>
+<p>1.如果this的值是undefined，就返回[object Undefined]</p>
+<p>2.如果this的值是null，就返回[object Null]</p>
+<p>3.让O成为ToObject(this)的结果</p>
+<p>4.让class成为O的内部属性[[Class]]的值</p>
+<p>5.最后返回由”[object”和class和”]”三个部分组成的字符串</p>
+</blockquote>
+<p>根据上面的第5点，我们大致知道调用Object.prototype.toString会返回一个由”[object”和class和”]”组成的字符串，而class是要判断的对象的内部属性。</p>
+<p>下面我们调用这个方法看看结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(Object.prototype.toString.call(undefined)) </span><br><span class="line">console.log(Object.prototype.toString.call(null))</span><br><span class="line"></span><br><span class="line">var date = new Date()</span><br><span class="line">console.log(Object.prototype.toString.call(date))</span><br></pre></td></tr></table></figure>
+<p><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%8810.23.39.png" alt=""></p>
+<p>可见这个class的值就是识别对象类型的关键。</p>
+<p>下面，我们尝试这个Object.prototype.toString识别更多的类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var num = 8;</span><br><span class="line">var str = &apos;hello world&apos;;</span><br><span class="line">val boolean = true;</span><br><span class="line">var und = undefined;</span><br><span class="line">var nul = null;</span><br><span class="line">var obj = &#123;a:1&#125;</span><br><span class="line">var array = [1，2，3];</span><br><span class="line">var date = new Date();</span><br><span class="line">var error = new Error();</span><br><span class="line">var reg = a/g/;</span><br><span class="line">var func = function a()&#123;&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function checkType() &#123;</span><br><span class="line">	for (var i = 0; i &lt; arguments.length; i++) &#123;</span><br><span class="line">		console.log(Object.prototype.toString.call(arguments[i]))</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	checkType(num,str,boolean,und,nul,array,date,error,func,obj,reg)</span><br></pre></td></tr></table></figure>
+<p>运行的结果如下：</p>
+<p><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%8810.40.05.png" alt=""></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>至此，我们已经知道如何用typeof操作符判断基本类型了，对于object里的某些细化的类型，我们可以用Object.prototype.toString方法来判断如日期，正则，错误类型等~</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/24/react组件的生命周期/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -359,170 +523,6 @@
 <p><strong>shouldComponentUpdate</strong>返回一个布尔值。在组件接收到新的props或者state时被调用。如果返回了true，则告诉React库这个组件在这次更新过程中需要重新渲染。</p>
 <p>如果组件的<strong>shouldComponentUpdate</strong>函数返回了true，React接下来就会依次调用对应组件的<strong>componentWillUpdate</strong>，<strong>render</strong>和<strong>componentDidUpdate</strong>。<strong>componentWillUpdate</strong>在组件接收到新的props或者state但还没有被渲染时被调用，在初始化时不会被调用。<strong>componentDidUpdate</strong>在组件完成更新后立即调用，在初始化时不会被调用。</p>
 <h3 id="3-卸载过程（Unmount）"><a href="#3-卸载过程（Unmount）" class="headerlink" title="3.卸载过程（Unmount）"></a>3.卸载过程（Unmount）</h3><p>React组件的卸载过程只涉及到一个<strong>componentWillUnmount</strong>函数，当组件要从DOM树上删除时，该函数被调用做一些清理性的工作。卸载十分干净利落，一个函数就搞定！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/24/揭开类型判断的面纱/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nikouml">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://p53vmqr8d.bkt.clouddn.com/timg.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/24/揭开类型判断的面纱/" itemprop="url">js之揭开类型判断的面纱</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-24T11:16:27+08:00">
-                2018-07-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>参考：冴羽github中的js专题 <a href="https://github.com/mqyqingfeng/Blog" target="_blank" rel="noopener">https://github.com/mqyqingfeng/Blog</a></p>
-<p>nikouml</p>
-</blockquote>
-<h1 id="js之揭开类型判断的面纱"><a href="#js之揭开类型判断的面纱" class="headerlink" title="js之揭开类型判断的面纱"></a>js之揭开类型判断的面纱</h1><h2 id="类型判断？"><a href="#类型判断？" class="headerlink" title="类型判断？"></a>类型判断？</h2><p>在我们实际的开发中经常会遇到类型判断的问题，比如前端从后端接口中拿到一个数据，我们可能需要判断这个数据的类型，假设有一个变量a，简单点的我们判断它是数字还是字符串，或者说是对象还是数组啦，更高级别的情况下，我们可能需要判断a是日期还是错误类型等等。</p>
-<h2 id="都用typeof吗？不！"><a href="#都用typeof吗？不！" class="headerlink" title="都用typeof吗？不！"></a>都用typeof吗？不！</h2><p>我们最最常用的莫过于typeof，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof(&apos;nikouml&apos;))   //string</span><br></pre></td></tr></table></figure>
-<p>上面的例子很常见，用typeof判断’nikomul’的类型，然后将结果打印出来，很明显高结果是string类型。但是我们应当注意,下图是MDN上对typeof的解释：<br><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%886.09.28.png" alt=""><br>这很明显的告诉我们，typeof是一个运算符，就像数学中的加减乘除一样，放在单个操作数的前面，操作数可以是任意类型的。返回值是代表操作室类型的一个字符串。<br>因此，下面这种写法和上面完全等同：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof &apos;nikouml&apos;)   //string</span><br></pre></td></tr></table></figure>
-<p>我们都知道，在ES6之前，Js一共有6中数据类型，下面列出它们以及typeof对应的返回结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- Undefined     //undefined</span><br><span class="line">- Null          //object</span><br><span class="line">- Boolean		   //boolean	</span><br><span class="line">- Number        //number</span><br><span class="line">- String        //string</span><br><span class="line">- Object		  //object</span><br></pre></td></tr></table></figure>
-<p>我们可以看到，typeof返回的都是小写字符串，同时应该注意到，Null和Object类型返回结果都是object。因此，typeof返回的结果并不能与原类型一一对应。</p>
-<p>是不是object类型下的所有类型都会只返回object呢？有一个特例，typeof能够检测出object下的function类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">function func()&#123;&#125;</span><br><span class="line">console.log(typeof func)   // function</span><br></pre></td></tr></table></figure>
-<p>因此，typeof实际上能够检测出6中类型的值，它们是：</p>
-<ul>
-<li>undefined</li>
-<li>object</li>
-<li>boolean</li>
-<li>number</li>
-<li>string</li>
-<li>function</li>
-</ul>
-<p>但是我们知道，object类型下还细分有其他诸多类型，例如Array，Date，Error，RegExp等，我们尝试一下用typeof去检测这些类型：</p>
-<p><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%886.38.36.png" alt=""></p>
-<p>返回的可都是object呀！难道没有办法把他们区别开了吗？</p>
-<h2 id="Object-prototype-toString"><a href="#Object-prototype-toString" class="headerlink" title="Object.prototype.toString"></a>Object.prototype.toString</h2><p>哈哈，怎么可能没有呢？那就是Object.prototype.toString呀~</p>
-<p>那么这个方法的原理是什么呢？在ES5里这样写道：</p>
-<blockquote>
-<p>1.如果this的值是undefined，就返回[object Undefined]</p>
-<p>2.如果this的值是null，就返回[object Null]</p>
-<p>3.让O成为ToObject(this)的结果</p>
-<p>4.让class成为O的内部属性[[Class]]的值</p>
-<p>5.最后返回由”[object”和class和”]”三个部分组成的字符串</p>
-</blockquote>
-<p>根据上面的第5点，我们大致知道调用Object.prototype.toString会返回一个由”[object”和class和”]”组成的字符串，而class是要判断的对象的内部属性。</p>
-<p>下面我们调用这个方法看看结果：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(Object.prototype.toString.call(undefined)) </span><br><span class="line">console.log(Object.prototype.toString.call(null))</span><br><span class="line"></span><br><span class="line">var date = new Date()</span><br><span class="line">console.log(Object.prototype.toString.call(date))</span><br></pre></td></tr></table></figure>
-<p><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%8810.23.39.png" alt=""></p>
-<p>可见这个class的值就是识别对象类型的关键。</p>
-<p>下面，我们尝试这个Object.prototype.toString识别更多的类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var num = 8;</span><br><span class="line">var str = &apos;hello world&apos;;</span><br><span class="line">val boolean = true;</span><br><span class="line">var und = undefined;</span><br><span class="line">var nul = null;</span><br><span class="line">var obj = &#123;a:1&#125;</span><br><span class="line">var array = [1，2，3];</span><br><span class="line">var date = new Date();</span><br><span class="line">var error = new Error();</span><br><span class="line">var reg = a/g/;</span><br><span class="line">var func = function a()&#123;&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function checkType() &#123;</span><br><span class="line">	for (var i = 0; i &lt; arguments.length; i++) &#123;</span><br><span class="line">		console.log(Object.prototype.toString.call(arguments[i]))</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	checkType(num,str,boolean,und,nul,array,date,error,func,obj,reg)</span><br></pre></td></tr></table></figure>
-<p>运行的结果如下：</p>
-<p><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%8810.40.05.png" alt=""></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>至此，我们已经知道如何用typeof操作符判断基本类型了，对于object里的某些细化的类型，我们可以用Object.prototype.toString方法来判断如日期，正则，错误类型等~</p>
 
           
         
