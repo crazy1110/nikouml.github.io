@@ -79,13 +79,22 @@
 
 
 
-<meta property="og:type" content="website">
+<meta name="description" content="参考：冴羽github中的js专题 https://github.com/mqyqingfeng/Blog 冯赛凤–nikouml  js之揭开类型判断的面纱类型判断？在我们实际的开发中经常会遇到类型判断的问题，比如前端从后端接口中拿到一个数据，我们可能需要判断这个数据的类型，假设有一个变量a，简单点的我们判断它是数字还是字符串，或者说是对象还是数组啦，更高级别的情况下，我们可能需要判断a是日期">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/04/26/揭开类型判断的面纱/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="参考：冴羽github中的js专题 https://github.com/mqyqingfeng/Blog 冯赛凤–nikouml  js之揭开类型判断的面纱类型判断？在我们实际的开发中经常会遇到类型判断的问题，比如前端从后端接口中拿到一个数据，我们可能需要判断这个数据的类型，假设有一个变量a，简单点的我们判断它是数字还是字符串，或者说是对象还是数组啦，更高级别的情况下，我们可能需要判断a是日期">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%886.09.28.png">
+<meta property="og:image" content="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%886.38.36.png">
+<meta property="og:image" content="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%8810.23.39.png">
+<meta property="og:image" content="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%8810.40.05.png">
+<meta property="og:updated_time" content="2018-04-26T14:43:36.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="参考：冴羽github中的js专题 https://github.com/mqyqingfeng/Blog 冯赛凤–nikouml  js之揭开类型判断的面纱类型判断？在我们实际的开发中经常会遇到类型判断的问题，比如前端从后端接口中拿到一个数据，我们可能需要判断这个数据的类型，假设有一个变量a，简单点的我们判断它是数字还是字符串，或者说是对象还是数组啦，更高级别的情况下，我们可能需要判断a是日期">
+<meta name="twitter:image" content="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%886.09.28.png">
 
 
 
@@ -115,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/26/揭开类型判断的面纱/"/>
 
 
 
 
 
-  <title>Hexo</title>
+  <title> | Hexo</title>
   
 
 
@@ -140,8 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,137 +242,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/24/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nikouml">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://p53vmqr8d.bkt.clouddn.com/timg.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/24/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-24T10:05:16+08:00">
-                2018-07-24
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -394,9 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/26/揭开类型判断的面纱/" itemprop="url">未命名</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -446,9 +324,7 @@
       
 
       
-        
-          
-            <blockquote>
+        <blockquote>
 <p>参考：冴羽github中的js专题 <a href="https://github.com/mqyqingfeng/Blog" target="_blank" rel="noopener">https://github.com/mqyqingfeng/Blog</a></p>
 <p>冯赛凤–nikouml</p>
 </blockquote>
@@ -494,8 +370,6 @@
 <p><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-04-26%20%E4%B8%8B%E5%8D%8810.40.05.png" alt=""></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>至此，我们已经知道如何用typeof操作符判断基本类型了，对于object里的某些细化的类型，我们可以用Object.prototype.toString方法来判断如日期，正则，错误类型等~</p>
 
-          
-        
       
     </div>
     
@@ -512,170 +386,32 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/25/react组件的生命周期/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nikouml">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://p53vmqr8d.bkt.clouddn.com/timg.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/25/react组件的生命周期/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T12:03:34+08:00">
-                2018-03-25
-              </time>
+              <a href="/2018/03/25/react组件的生命周期/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
+              <a href="/2018/07/24/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
             
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h2 id="React组件的生命周期"><a href="#React组件的生命周期" class="headerlink" title="React组件的生命周期"></a>React组件的生命周期</h2><p>就像人有生老病死，react中的组件也有自己的生命周期，每个组件在被创造出来之后，都可能经历更新和删除的过程，就如同鲜活的个体。</p>
-<p>闲话少说，我们进入正题👇👇</p>
-<p>React严格定义了组件的生命周期，组件创建之后会经历以三个过程：</p>
-<ul>
-<li>装载过程（Mount）：将组件第一次在DOM树中进行渲染时</li>
-<li>更新过程（Update）：组件被再次渲染时</li>
-<li>卸载过程（Unmount）：将组件从DOM树中删除时</li>
-</ul>
-<p>react库会不同的时期调用react组件的一些成员函数来实现生命周期的更替，这些函数也被称为生命周期函数。在具体化过程之前，我们可以看看下面这张图：</p>
-<p><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%9B%BE%E8%A7%A3.jpg" alt="Alt text" title="图解"></p>
-<h3 id="1-装载过程（Mount）"><a href="#1-装载过程（Mount）" class="headerlink" title="1.装载过程（Mount）"></a>1.装载过程（Mount）</h3><p>在组件第一次被渲染的时候，调用的是下面这些函数：</p>
-<ul>
-<li>constructor</li>
-<li>getInitialState</li>
-<li>getDefaultProps</li>
-<li>componentWillMount</li>
-<li>render</li>
-<li>componentDidMount</li>
-</ul>
-<p><strong>constructor</strong>是ES6中每个类的构造函数，一个react组件如果需要构造函数，往往是需要为了两个目的：</p>
-<pre><code>1.初始化state
-2.绑定成员函数的this环境
-</code></pre><p><strong>getInitialState</strong>这个函数的返回值会用来初始化的组件的this.state，<strong>getDefaultProps</strong>这个函数的返回值可以作为props的初始值，但是这两个函数值在React.createClass方法创造的组件类才会用到。换句话说，这两个方法在ES6定义的React组件中根本不会用到。</p>
-<p>毋庸置疑，<strong>render</strong>函数是整个React组件中最重要的函数，<strong>render</strong>函数虽然是渲染函数，但是它却不做实际的渲染动作，而是返回一个JSX，最终还是由React来完成渲染的工作。值得注意的是<strong>render</strong>是一个纯函数，若在<strong>render</strong>函数中调用this.setState毫无疑问是错误的。</p>
-<p>从上面的Mount过程中，我们可以清楚看到<strong>componentWillMount</strong>和<strong>componentDidMount</strong>分居在render两侧，顾名思义，这两个函数将在组件挂载前后分别起作用。<strong>componentWillMount</strong>发生在组件将要装载的时候，也就是说，我们完全可以把在<strong>componentWillMount</strong>中要做的事情放到<strong>constructor</strong>中去做。</p>
-<p>但是<strong>componentDidMount</strong>的作用就大了，<strong>render</strong>函数调用之后并不会立刻调用<strong>componentDidMount</strong>，而是等待<strong>render</strong>函数被触发且组件挂载到DOM树之后，才会被调用。<strong>componentDidMount</strong>将作为挂载过程的收尾。</p>
-<h3 id="2-更新过程（Update）"><a href="#2-更新过程（Update）" class="headerlink" title="2.更新过程（Update）"></a>2.更新过程（Update）</h3><p>装载完成之后，展现在用户面前的将是React组件的初印象，随着用户的操作，组件的展现形式必然要发生变化，这时候将会引发组件的更新过程。</p>
-<p>更新过程将会调用下面这些函数：</p>
-<ul>
-<li>componentWillReceiveProps</li>
-<li>shouldComponentUpdate</li>
-<li>componentWillUpdate</li>
-<li>render</li>
-<li>componentDidUpdate</li>
-</ul>
-<p>当props发生变化时执行，初始化render时不执行，在<strong>componentWillReceiveProps</strong>里面，可根据属性的变化，通过调用this.setState()来更新组件状态，旧的属性还是可以通过this.props来获取,这里调用更新状态是安全的，并不会触发额外的<strong>render</strong>。</p>
-<p><strong>shouldComponentUpdate</strong>返回一个布尔值。在组件接收到新的props或者state时被调用。如果返回了true，则告诉React库这个组件在这次更新过程中需要重新渲染。</p>
-<p>如果组件的<strong>shouldComponentUpdate</strong>函数返回了true，React接下来就会依次调用对应组件的<strong>componentWillUpdate</strong>，<strong>render</strong>和<strong>componentDidUpdate</strong>。<strong>componentWillUpdate</strong>在组件接收到新的props或者state但还没有被渲染时被调用，在初始化时不会被调用。<strong>componentDidUpdate</strong>在组件完成更新后立即调用，在初始化时不会被调用。</p>
-<h3 id="3-卸载过程（Unmount）"><a href="#3-卸载过程（Unmount）" class="headerlink" title="3.卸载过程（Unmount）"></a>3.卸载过程（Unmount）</h3><p>React组件的卸载过程只涉及到一个<strong>componentWillUnmount</strong>函数，当组件要从DOM树上删除时，该函数被调用做一些清理性的工作。卸载十分干净利落，一个函数就搞定！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -685,10 +421,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -696,6 +433,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -716,8 +457,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -763,6 +513,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#js之揭开类型判断的面纱"><span class="nav-number">1.</span> <span class="nav-text">js之揭开类型判断的面纱</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类型判断？"><span class="nav-number">1.1.</span> <span class="nav-text">类型判断？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#都用typeof吗？不！"><span class="nav-number">1.2.</span> <span class="nav-text">都用typeof吗？不！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-prototype-toString"><span class="nav-number">1.3.</span> <span class="nav-text">Object.prototype.toString</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -909,6 +675,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
