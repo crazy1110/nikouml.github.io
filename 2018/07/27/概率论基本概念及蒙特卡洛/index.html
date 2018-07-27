@@ -79,19 +79,21 @@
 
 
 
-<meta name="description" content="离散型随机变量：用我们日常生活中的量词就可以度量的，例如：个，块等。 连续性随机变量：无法用量词度量，且课、以精确到小数点后2位，3位甚至无限位  一定要牢牢记住一个话：研究一个随机变量，不只是要看它能取哪些值，更重要的是它取各种值的概率如何！概率，概率，概率，什么概率函数啦，什么概率密度啦，什么概率分布啦，都是在说概率！！！ 概率函数： y=P(X=i)(i=1,2,3,4,5,6)，y是函数">
+<meta name="description" content="从简书学习记笔记：https://www.jianshu.com/p/b570b1ba92bb（反正记的笔记只有我寄几看啦~）  离散型随机变量：用我们日常生活中的量词就可以度量的，例如：个，块等。 连续性随机变量：无法用量词度量，且课、以精确到小数点后2位，3位甚至无限位  一定要牢牢记住一个话：研究一个随机变量，不只是要看它能取哪些值，更重要的是它取各种值的概率如何！概率，概率，概率，什么概率">
 <meta property="og:type" content="article">
-<meta property="og:title" content="概率论基本概念及蒙特卡洛">
+<meta property="og:title" content="概率论之关于概率表示的基本概念">
 <meta property="og:url" content="http://yoursite.com/2018/07/27/概率论基本概念及蒙特卡洛/index.html">
 <meta property="og:site_name" content="nikouml">
-<meta property="og:description" content="离散型随机变量：用我们日常生活中的量词就可以度量的，例如：个，块等。 连续性随机变量：无法用量词度量，且课、以精确到小数点后2位，3位甚至无限位  一定要牢牢记住一个话：研究一个随机变量，不只是要看它能取哪些值，更重要的是它取各种值的概率如何！概率，概率，概率，什么概率函数啦，什么概率密度啦，什么概率分布啦，都是在说概率！！！ 概率函数： y=P(X=i)(i=1,2,3,4,5,6)，y是函数">
+<meta property="og:description" content="从简书学习记笔记：https://www.jianshu.com/p/b570b1ba92bb（反正记的笔记只有我寄几看啦~）  离散型随机变量：用我们日常生活中的量词就可以度量的，例如：个，块等。 连续性随机变量：无法用量词度量，且课、以精确到小数点后2位，3位甚至无限位  一定要牢牢记住一个话：研究一个随机变量，不只是要看它能取哪些值，更重要的是它取各种值的概率如何！概率，概率，概率，什么概率">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-27%20%E4%B8%8B%E5%8D%888.53.23.png">
 <meta property="og:image" content="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-27%20%E4%B8%8B%E5%8D%889.02.14.png">
-<meta property="og:updated_time" content="2018-07-27T13:04:03.672Z">
+<meta property="og:image" content="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-27%20%E4%B8%8B%E5%8D%889.33.25.png">
+<meta property="og:image" content="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-27%20%E4%B8%8B%E5%8D%889.38.40.png">
+<meta property="og:updated_time" content="2018-07-27T13:41:03.065Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="概率论基本概念及蒙特卡洛">
-<meta name="twitter:description" content="离散型随机变量：用我们日常生活中的量词就可以度量的，例如：个，块等。 连续性随机变量：无法用量词度量，且课、以精确到小数点后2位，3位甚至无限位  一定要牢牢记住一个话：研究一个随机变量，不只是要看它能取哪些值，更重要的是它取各种值的概率如何！概率，概率，概率，什么概率函数啦，什么概率密度啦，什么概率分布啦，都是在说概率！！！ 概率函数： y=P(X=i)(i=1,2,3,4,5,6)，y是函数">
+<meta name="twitter:title" content="概率论之关于概率表示的基本概念">
+<meta name="twitter:description" content="从简书学习记笔记：https://www.jianshu.com/p/b570b1ba92bb（反正记的笔记只有我寄几看啦~）  离散型随机变量：用我们日常生活中的量词就可以度量的，例如：个，块等。 连续性随机变量：无法用量词度量，且课、以精确到小数点后2位，3位甚至无限位  一定要牢牢记住一个话：研究一个随机变量，不只是要看它能取哪些值，更重要的是它取各种值的概率如何！概率，概率，概率，什么概率">
 <meta name="twitter:image" content="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-27%20%E4%B8%8B%E5%8D%888.53.23.png">
 
 
@@ -128,7 +130,7 @@
 
 
 
-  <title>概率论基本概念及蒙特卡洛 | nikouml</title>
+  <title>概率论之关于概率表示的基本概念 | nikouml</title>
   
 
 
@@ -272,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">概率论基本概念及蒙特卡洛</h1>
+          <h1 class="post-title" itemprop="name headline">概率论之关于概率表示的基本概念</h1>
         
 
         <div class="post-meta">
@@ -322,7 +324,8 @@
       
 
       
-        <ul>
+        <p>从简书学习记笔记：<a href="https://www.jianshu.com/p/b570b1ba92bb（反正记的笔记只有我寄几看啦~）" target="_blank" rel="noopener">https://www.jianshu.com/p/b570b1ba92bb（反正记的笔记只有我寄几看啦~）</a></p>
+<ul>
 <li>离散型随机变量：用我们日常生活中的量词就可以度量的，例如：个，块等。</li>
 <li>连续性随机变量：无法用量词度量，且课、以精确到小数点后2位，3位甚至无限位</li>
 </ul>
@@ -333,7 +336,11 @@
 <h3 id="概率分布："><a href="#概率分布：" class="headerlink" title="概率分布："></a>概率分布：</h3><ul>
 <li>这个概率分布，关键不在“概率”上，而在“分布”上，例如掷骰子时，有如下分布：<br><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-27%20%E4%B8%8B%E5%8D%888.53.23.png" alt=""><br>其实上面的不对啦，因为对于骰子来说，少了一个6，必须上面是完整的随机变量取值，下面是对应的随时变量可能取值的概率才行呀~</li>
 </ul>
-<h3 id="概率分布函数：就是把概率函数累加！！"><a href="#概率分布函数：就是把概率函数累加！！" class="headerlink" title="概率分布函数：就是把概率函数累加！！"></a>概率分布函数：就是把概率函数累加！！</h3><p><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-27%20%E4%B8%8B%E5%8D%889.02.14.png" alt=""><br>其实吧，概率分布函数叫做！！！概率</p>
+<h3 id="概率分布函数：就是把概率函数累加！！"><a href="#概率分布函数：就是把概率函数累加！！" class="headerlink" title="概率分布函数：就是把概率函数累加！！"></a>概率分布函数：就是把概率函数累加！！</h3><p><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-27%20%E4%B8%8B%E5%8D%889.02.14.png" alt=""><br>其实吧，概率分布函数叫做！！！累计概率函数！！！更加好理解啦~</p>
+<h3 id="连续性随机变量也有概率函数和概率分布函数吗？"><a href="#连续性随机变量也有概率函数和概率分布函数吗？" class="headerlink" title="连续性随机变量也有概率函数和概率分布函数吗？"></a>连续性随机变量也有概率函数和概率分布函数吗？</h3><ul>
+<li>有的！只不过在连续性随机变量中还可以用另一个超级好用而且直观的—-&gt;&gt;&gt;  概率密度函数<br><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-27%20%E4%B8%8B%E5%8D%889.33.25.png" alt=""></li>
+<li>概率密度函数用数学公式表示就是一个定积分的函数，定积分在数学中是用来求面积的，而在这里，你就把概率表示为面积即可！<br><img src="http://p53vmqr8d.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202018-07-27%20%E4%B8%8B%E5%8D%889.38.40.png" alt=""><br>右图用面积来表示概率，灰常的直观啦，可以很清楚的看出哪些取值的概率更大！</li>
+</ul>
 
       
     </div>
@@ -484,7 +491,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一定要牢牢记住一个话："><span class="nav-number">1.</span> <span class="nav-text">一定要牢牢记住一个话：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概率函数："><span class="nav-number">1.1.</span> <span class="nav-text">概率函数：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概率分布："><span class="nav-number">1.2.</span> <span class="nav-text">概率分布：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概率分布函数：就是把概率函数累加！！"><span class="nav-number">1.3.</span> <span class="nav-text">概率分布函数：就是把概率函数累加！！</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一定要牢牢记住一个话："><span class="nav-number">1.</span> <span class="nav-text">一定要牢牢记住一个话：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概率函数："><span class="nav-number">1.1.</span> <span class="nav-text">概率函数：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概率分布："><span class="nav-number">1.2.</span> <span class="nav-text">概率分布：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#概率分布函数：就是把概率函数累加！！"><span class="nav-number">1.3.</span> <span class="nav-text">概率分布函数：就是把概率函数累加！！</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连续性随机变量也有概率函数和概率分布函数吗？"><span class="nav-number">1.4.</span> <span class="nav-text">连续性随机变量也有概率函数和概率分布函数吗？</span></a></li></ol></li></ol></div>
             
 
           </div>
